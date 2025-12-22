@@ -1,0 +1,13 @@
+# Ignore compiled files
+*.exe
+*.o
+
+# Ignore build folders
+build/
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore environment files
+.env
+.vscode/
