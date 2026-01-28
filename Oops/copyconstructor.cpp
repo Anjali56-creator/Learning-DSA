@@ -14,14 +14,18 @@ class customer{
         roi=new int[100];
     }
     //parameterized constructor
-    // customer(string n, int acc_num, int bal){
-    //     name=n;
-    //     account_number=acc_num;
-    //     balance=bal;
-    // }
-    //inline constructor 
-    customer(string n, int acc_num, int bal) : name(n), account_number(acc_num), balance(bal) {
+    customer(string n, int acc_num, int bal){
+        name=n;
+        account_number=acc_num;
+        balance=bal;
     }
+    //copy constructor
+    customer(const customer &c){
+        name=c.name;
+        account_number=c.account_number;
+        balance=c.balance;
+    }
+  
     void dislay(){
         cout<<"Name: "<<name<<endl;
         cout<<"Account Number: "<<account_number<<endl;
@@ -36,5 +40,11 @@ int main()
     
     customer c2("Rohan", 10, 500); //parameterized constructor called
     c2.dislay();
+    customer c3=c2; //copy constructor called
+    customer c4(c1); //copy constructor called
+    cout<<endl;
+    c3.dislay();
+    cout<<endl;
+    c4.dislay();
     return 0;
 }
