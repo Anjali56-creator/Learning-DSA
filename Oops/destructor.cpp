@@ -22,6 +22,5 @@ class customer
 int main()
 {
     customer c1; // default constructor called
-    //customer c2; // default constructor called
     return 0;
 }
