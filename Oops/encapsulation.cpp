@@ -13,15 +13,17 @@ class customer{
         total_customer++;
         total_balance += bal;
     }
-
-
 void display(){
     cout<<name<<" "<<acc_num<<" "<<balance<<" "<<total_customer<<" "<<total_balance<<endl;
 }
 void deposit(int amt){
-    if(amt>0)
+    if(amt>0){
     balance += amt;
     total_balance += amt;
+    }
+    else{
+        cout<<"Invalid deposit amount"<<endl;
+    }
 }
     void withdraw(int amt){
         if(amt>0 && amt<=balance)
@@ -36,6 +38,7 @@ int main(){
     customer c2("Rohan",1002,7000);
     c1.display();
     c2.display();
+    c1.deposit(-10);
     return 0;
         
 }
