@@ -10,27 +10,26 @@ class Node{
     }
 };
 int main(){
-    Node* head=NULL;
+    Node* Head=NULL;
     int arr[]={1,2,3,4,5};
-    //insert at beginning
-    //linked list does not exist
     for(int i=0;i<5;i++){
-        if(head==NULL){
-            head=new Node(arr[i]);
+        //if linked list doesn't exists
+        if(Head==NULL){
+            Head=new Node(arr[i]);
         }
-        //linked list exists
+        //if linked list exists
         else{
-        Node* temp;
-        temp=new Node(arr[i]);
-        temp->next=head;
-        head=temp;
+            Node* temp;
+            temp=new Node(arr[i]);
+            temp->next=Head;
+            Head=temp;
         }
     }
-//print the linked list
-Node *temp=head;
-while(temp){
-    cout<<temp->data<<" ";
-    temp=temp->next;
+    //print the linked list
+    Node* temp=Head;
+    while(temp){
+        cout<<temp->data<<" ";
+        temp=temp->next;
     }
-return 0;
+    return 0;
 }
