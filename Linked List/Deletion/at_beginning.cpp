@@ -21,16 +21,16 @@ int main(){
     int size = 5;
 
     // 🔹 Step 1: Create linked list from array
-    for(int i = 0; i < size; i++){
-        Node* temp = new Node(arr[i]);
-
+   for(int i = 0; i < 5; i++){
         if(head == NULL){
-            head = temp;
-            tail = temp;
+            head = new Node(arr[i]);
         }
         else{
-            tail->next = temp;
-            tail = temp;
+            Node* tail = head;
+            while(tail->next != NULL){
+                tail = tail->next;
+            }
+            tail->next = new Node(arr[i]);  // KEY LINE
         }
     }
 
