@@ -17,6 +17,7 @@ int main(){
 
     int arr[] = {1,2,3,4,5};
 
+    // Create linked list
     for(int i = 0; i < 5; i++){
         if(head == NULL){
             head = new Node(arr[i]);
@@ -29,28 +30,33 @@ int main(){
             tail->next = new Node(arr[i]); 
         }
     }
-    if(head!=NULL){
-        //only one node is present
-        if(head->next==NULL){
-            Node* temp=head;
-            delete temp;
-            head=NULL;
-        }
-        //more than 1 node is present
-        else{
-            Node* curr=head;
-            Node* prev=NULL;
-            while(curr->next!=NULL){
-                prev=curr;
-                curr=curr->next;
-            }
-            delete curr;
-            prev->next=NULL;
 
+    int x = 3; // delete 3rd node
+
+    // Case 1: delete head
+    if(x == 1){
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+    }
+    else{
+        Node* curr = head;
+        Node* prev = NULL;
+
+        for(int i = 1; i < x; i++){
+            prev = curr;
+            curr = curr->next;
+
+            if(curr == NULL) break; // safety
+        }
+
+        if(curr != NULL){
+            prev->next = curr->next;
+            delete curr;
         }
     }
 
-    // print after full creation
+    // Print list
     Node* temp = head;
     while(temp){
         cout << temp->data << " ";
