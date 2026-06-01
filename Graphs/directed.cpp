@@ -1,7 +1,7 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-//unweighted graph undirected
+//directed graph unweighted
 int main(){
     int vertex,edges;
     cout<<"Enter number of vertex and edges: ";
@@ -11,7 +11,6 @@ int main(){
     for(int i=0;i<edges;i++){
         cin>>u>>v;
         AdjMat[u][v]=1;
-        AdjMat[v][u]=1;
     }
     cout<<"Adjacency Matrix: "<<endl;
     for(int i=0;i<vertex;i++){

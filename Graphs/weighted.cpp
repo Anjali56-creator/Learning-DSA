@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 using namespace std;
+//weighted graph undirected
 int main(){
     int vertex,edges;
     cout<<"Enter number of vertex and edges: ";

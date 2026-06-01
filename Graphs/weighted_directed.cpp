@@ -1,17 +1,16 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-//unweighted graph undirected
+//weighted graph directed
 int main(){
     int vertex,edges;
     cout<<"Enter number of vertex and edges: ";
     cin>>vertex>>edges;
-    vector<vector<bool>>AdjMat(vertex,vector<bool>(vertex,0));
-    int u,v;
+    vector<vector<int>>AdjMat(vertex,vector<int>(vertex,0));
+    int u,v,weight;
     for(int i=0;i<edges;i++){
-        cin>>u>>v;
-        AdjMat[u][v]=1;
-        AdjMat[v][u]=1;
+        cin>>u>>v>>weight;
+        AdjMat[u][v]=weight;
     }
     cout<<"Adjacency Matrix: "<<endl;
     for(int i=0;i<vertex;i++){
