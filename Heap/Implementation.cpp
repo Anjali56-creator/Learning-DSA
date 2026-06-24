@@ -81,4 +81,4 @@ int main(){
     h.insert(60);// heap is full
     h.print();
     h.Delete();
-}
+} // time complexity of insert and delete is O(log n) and space complexity is O(n)
