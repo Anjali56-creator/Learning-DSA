@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    priority_queue<int>p; //max heap
+    priority_queue<int>p; //max heap implementation
     p.push(10);
     p.push(20);
     p.push(30);
